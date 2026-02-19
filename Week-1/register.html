@@ -1,68 +1,149 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Register</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      background-color: #988c8c;
+      font-family: Arial, sans-serif;
+    }
+    .form-box {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .wrapper {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      margin: 0 auto;
+      background-color: #808080;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+    }
+    td {
+      padding: 8px;
+      color: #fff;
+    }
+    input[type="text"], 
+    input[type="password"], 
+    input[type="date"], 
+    select, 
+    textarea {
+      width: 100%;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    input[type="submit"], input[type="reset"] {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
-<body bgcolor="#d3d3d3">
-<form name="register" method="post">
-<table align="center" bgcolor="#808080">
-<caption><h1><b><u>Registration Page</u></b></h1></caption>
-<tr>
-<td>User Name:</td>
-<td><input type="text" name="uname"></td>
-</tr>
-<tr>
-<td>Password:</td>
-<td><input type="password" name="pwd"></td>
-</tr>
-<tr>
-<td>E-mail:</td>
-<td><input type="text" name="email"></td>
-</tr>
-<tr>
-<td>Phone Number:</td>
-<td><input type="text" name="phno" size="12" maxlength="10"></td>
-</tr>
-<tr>
-<td>Gender:</td>
-<td><input type="radio" name="gender" checked>Male &nbsp;
-<input type="radio" name="gender">Female</td>
-</tr>
-<tr>
-<td>Date Of Birth:</td>
-<td><input type="date" name="dob"></td>
-</tr>
-<tr>
-<td>Languages Known:</td>
-<td><input type="checkbox" name="chkEng" checked>English &nbsp;
-<input type="checkbox" name="chkHIn">Hindi &nbsp;
-<input type="checkbox" name="chkTel">Telugu &nbsp;
-<input type="checkbox" name="chkTam">Tamil &nbsp;</td>
-</tr>
-<tr>
-<td><select name="states" align="center">
-<option value="Select">Select State</option>
-<option value="Telangana">TS</option>
-<option value="AP">Andhra Pradesh</option>
-<option value="MP">MP</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Tamilnadu">TN</option>
-</select></td>
-<td><select name="dist" align="center">
-<option value="Select">SelectDist</option>
-<option value="Hyderabad">Hyderabad</option>
-<option value="Warangal">Warangal</option>
-<option value="RangaReddy">Ranga Reddy</option>
-<option value="Karimnagar">Karimnagar</option>
-<option value="Nalgonda">Nalgonda</option>
-</select></td>
-</tr>
-<tr>
-<td>Address:</td>
-<td><textarea rows="5" cols="20" name="txtAddress"></textarea></td>
-</tr>
-<td colspan="2" align="center"><input type="submit" value="Register">&nbsp;
-<input type="reset" value="Reset"></td>
-</tr>
-</table>
+<body>
+  <div class="form-box">
+    <div class="wrapper">
+      <h1>Registration Page</h1>
+      <form name="register" method="post">
+        <table>
+          <tr>
+            <td>User Name:</td>
+            <td><input type="text" name="uname" required></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pwd" required></td>
+          </tr>
+          <tr>
+            <td>E-mail:</td>
+            <td><input type="email" name="email" required></td>
+          </tr>
+          <tr>
+            <td>Phone Number:</td>
+            <td><input type="text" name="phno" maxlength="10" required></td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td>
+              <input type="radio" name="gender" value="Male" checked> Male
+              <input type="radio" name="gender" value="Female"> Female
+            </td>
+          </tr>
+          <tr>
+            <td>Date Of Birth:</td>
+            <td><input type="date" name="dob" required></td>
+          </tr>
+          <tr>
+            <td>Languages Known:</td>
+            <td>
+              <input type="checkbox" name="chkEng" checked> English
+              <input type="checkbox" name="chkHin"> Hindi
+              <input type="checkbox" name="chkTel"> Telugu
+              <input type="checkbox" name="chkTam"> Tamil
+            </td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td>
+              <select name="states" required>
+                <option value="">Select State</option>
+                <option value="Telangana">Telangana</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Tamilnadu">Tamil Nadu</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>District:</td>
+            <td>
+              <select name="dist" required>
+                <option value="">Select District</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Warangal">Warangal</option>
+                <option value="RangaReddy">Ranga Reddy</option>
+                <option value="Karimnagar">Karimnagar</option>
+                <option value="Nalgonda">Nalgonda</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td><textarea rows="4" name="txtAddress" required></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <input type="submit" value="Register">
+              <input type="reset" value="Reset">
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
