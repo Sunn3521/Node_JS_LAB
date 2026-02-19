@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>my 1st web page</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<style>
+h1{
+  font-size:10px;
+}
+</style>
+</head>
+<body >
+
+<h1>HELLO WORLD</h1>
+<h2>HELLO WORLD!</h2>
+<h3>HELLO WORLD!!</h3>
+<h4>HELLO WORLD!!!</h4>
+<h5>HELLO WORLD!!!!</h5>
+<h6>HELLO WORLD!!!!!</h6>
+
+<p ><u><i><b>I am a student of cse-A</b></i></u></p>
+
+<ul>
+<li>orange</li>
+<li>apple</li>
+</ul>
+
+<ol>
+<li>orange</li>
+<li>apple</li>
+</ol>
+
+<dl>
+<dt>Coffee</dt>
+<dd>- black hot drink</dd>
+<dt>Milk</dt>
+<dd>- white cold drink</dd>
+</dl>
+
+<a href='home.htm'>Visit W3Schools.com!</a>
+<br>
+
+<img border="10" src="man.avif" width="50" height="60">
+
+<table>
+<tr>
+<td>Emil</td>
+<td>Tobias</td>
+<td>Linus</td>
+</tr>
+<tr>
+<td>16</td>
+<td>14</td>
+<td>10</td>
+</tr>
+</table>
+
+<form>
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname"><br><br>
+<label for="cars">Choose a car:</label>
+<select id="cars" name="cars" size="2" multiple>
+  <option value="volvo" selected>Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select><br><br>
+<textarea name="message" rows="10" cols="30" style="width:200px; height:50px;">
+The cat was playing in the garden.
+</textarea><br><br>
+<button type="button" onclick="alert('Hello World!')">Click Me!</button><br>
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset><br><br>
+<input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <input type="submit"><br><br>
+ </form>
+<form action="/action_page.php"
+  oninput="x.value=parseInt(c.value)+parseInt(d.value)">
+  0
+  <input type="range"  id="c" name="c" value="50">
+  100 +
+  <input type="number" id="d" name="d" value="50">
+  =
+  <output name="x" for="c d"></output>
+  <br><br>
+  <input type="submit">
+</form>
+</body>
+</html>
