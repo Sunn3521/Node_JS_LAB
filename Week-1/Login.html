@@ -1,22 +1,89 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      background-color: #988c8c;
+      font-family: Arial, sans-serif;
+    }
+    .form-box {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .wrapper {
+      background: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .img-area img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100px;
+    }
+    table {
+      margin: 0 auto;
+      background-color: #808080;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    caption {
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    td {
+      padding: 5px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 5px;
+    }
+    input[type="submit"] {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #555;
+    }
+  </style>
 </head>
-<body bgcolor="#d3d3d3">
-<form name="login" method="post">
-<table align="center" bgcolor="808080">
-<caption><b><u>Login</u></b></caption>
-<tr>
-<td>Username:</td>
-<td><input type="text" name="uname"></td>
-</tr>
-<tr>
-<td>Password:</td>
-<td><input type="password" name="pwd"></td>
-</tr>
-<tr>
-<td colspan="2" align="center"><input type="submit" value="Login"></td>
-</tr>
-</table>
+<body>
+  <div class="form-box">
+    <div class="wrapper">
+      <div class="img-area">
+        <img src="1.avif" alt="Login Icon">
+      </div>
+      <div class="form-area">
+        <h3>Login Form</h3>
+        <form name="login" method="post">
+          <table>
+            <caption>Login</caption>
+            <tr>
+              <td>Username:</td>
+              <td><input type="text" name="uname" required></td>
+            </tr>
+            <tr>
+              <td>Password:</td>
+              <td><input type="password" name="pwd" required></td>
+            </tr>
+            <tr>
+              <td colspan="2" align="center">
+                <input type="submit" value="Login">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
