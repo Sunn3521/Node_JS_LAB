@@ -39,6 +39,7 @@
     input[type="text"], 
     input[type="password"], 
     input[type="date"], 
+    input[type="email"],
     select, 
     textarea {
       width: 100%;
@@ -67,15 +68,15 @@
   <div class="form-box">
     <div class="wrapper">
       <h1>Registration Page</h1>
-      <form name="register" method="post">
+      <form name="register" method="post" onsubmit="return validateForm()">
         <table>
           <tr>
             <td>User Name:</td>
-            <td><input type="text" name="uname" required></td>
+            <td><input type="text" name="uname" required minlength="3"></td>
           </tr>
           <tr>
             <td>Password:</td>
-            <td><input type="password" name="pwd" required></td>
+            <td><input type="password" name="pwd" required minlength="6"></td>
           </tr>
           <tr>
             <td>E-mail:</td>
@@ -83,12 +84,12 @@
           </tr>
           <tr>
             <td>Phone Number:</td>
-            <td><input type="text" name="phno" maxlength="10" required></td>
+            <td><input type="text" name="phno" maxlength="10" pattern="[0-9]{10}" required></td>
           </tr>
           <tr>
             <td>Gender:</td>
             <td>
-              <input type="radio" name="gender" value="Male" checked> Male
+              <input type="radio" name="gender" value="Male" required> Male
               <input type="radio" name="gender" value="Female"> Female
             </td>
           </tr>
@@ -99,7 +100,7 @@
           <tr>
             <td>Languages Known:</td>
             <td>
-              <input type="checkbox" name="chkEng" checked> English
+              <input type="checkbox" name="chkEng"> English
               <input type="checkbox" name="chkHin"> Hindi
               <input type="checkbox" name="chkTel"> Telugu
               <input type="checkbox" name="chkTam"> Tamil
@@ -133,7 +134,7 @@
           </tr>
           <tr>
             <td>Address:</td>
-            <td><textarea rows="4" name="txtAddress" required></textarea></td>
+            <td><textarea rows="4" name="txtAddress" required minlength="10"></textarea></td>
           </tr>
           <tr>
             <td colspan="2" align="center">
@@ -145,5 +146,59 @@
       </form>
     </div>
   </div>
+
+  <script>
+    function validateForm() {
+      let uname = document.register.uname.value.trim();
+      let pwd = document.register.pwd.value.trim();
+      let phno = document.register.phno.value.trim();
+      let dob = document.register.dob.value;
+      let address = document.register.txtAddress.value.trim();
+
+      // Username validation
+      if (uname.length < 3) {
+        alert("Username must be at least 3 characters long.");
+        return false;
+      }
+
+      // Password validation
+      if (pwd.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+
+      // Phone number validation
+      if (!/^\d{10}$/.test(phno)) {
+        alert("Phone number must be exactly 10 digits.");
+        return false;
+      }
+
+      // DOB validation (must not be future date)
+      let today = new Date();
+      let birthDate = new Date(dob);
+      if (birthDate > today) {
+        alert("Date of Birth cannot be in the future.");
+        return false;
+      }
+
+      // Language validation (at least one checkbox)
+      let chkEng = document.register.chkEng.checked;
+      let chkHin = document.register.chkHin.checked;
+      let chkTel = document.register.chkTel.checked;
+      let chkTam = document.register.chkTam.checked;
+      if (!chkEng && !chkHin && !chkTel && !chkTam) {
+        alert("Please select at least one language.");
+        return false;
+      }
+
+      // Address validation
+      if (address.length < 10) {
+        alert("Address must be at least 10 characters long.");
+        return false;
+      }
+
+      return true; // Form is valid
+    }
+  </script>
 </body>
 </html>
