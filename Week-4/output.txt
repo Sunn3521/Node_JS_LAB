@@ -1,0 +1,46 @@
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.03 sec)
+
+mysql> use mysql;
+Database changed
+
+mysql> CREATE TABLE student(id int,name varchar(20),course varchar(30));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from student;
++------+------+--------+
+| id   | name | course |
++------+------+--------+
+|    1 | John | cse    |
++------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++------+------+--------+
+| id   | name | course |
++------+------+--------+
+|    1 | sam  | it     |
++------+------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql>
