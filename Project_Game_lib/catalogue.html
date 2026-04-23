@@ -55,11 +55,22 @@ h1 {
   box-shadow: 0 0 15px cyan;
 }
 
+.time-label {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #9be7ff;
+}
+
+.site-timer {
+  font-family: 'Courier New', monospace;
+}
+
 .container {
   padding-bottom: 40px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -84,47 +95,408 @@ h1 {
   <h1>📚 Game Catalogue</h1>
 </div>
 
-<!-- GAMES LIST -->
+<!-- SIDE BY SIDE CONTAINERS -->
 <div class="container mt-4">
+  <div class="row">
 
-  <!-- WorldGuessr -->
-  <div class="card p-3 mb-3">
-    <h5>🌍 WorldGuessr</h5>
-    <p>Guess real-world locations using visual clues</p>
-    <a href="https://www.worldguessr.com/" target="_blank" class="text-info">Play Now</a>
+    <!-- LEFT: ALL GAMES LIST -->
+    <div class="col-md-8 mb-4">
+      <h2 class="text-center mb-4">📚 All Games</h2>
+
+      <!-- WorldGuessr -->
+      <div class="card p-3 mb-3">
+        <h5>🌍 WorldGuessr</h5>
+        <p>Guess real-world locations using visual clues</p>
+        <a href="https://www.worldguessr.com/" target="_blank" class="text-info track-play" data-id="worldguessr">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Statle -->
+      <div class="card p-3 mb-3">
+        <h5>📊 Statle</h5>
+        <p>Daily stats-based guessing challenge game</p>
+        <a href="https://statle.fun/" target="_blank" class="text-info track-play" data-id="statle">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Genshindle -->
+      <div class="card p-3 mb-3">
+        <h5>⚡ Genshindle</h5>
+        <p>Guess Genshin Impact characters in quiz form</p>
+        <a href="https://genshindle.com/" target="_blank" class="text-info track-play" data-id="genshindle">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun sandboxels -->
+      <div class="card p-3 mb-3">
+        <h5>🧪 Sandboxels</h5>
+        <p>Mix elements and watch them interact in a physics sandbox.</p>
+        <a href="https://neal.fun/sandboxels/" target="_blank" class="text-info track-play" data-id="sandboxels">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun not-a-robot -->
+      <div class="card p-3 mb-3">
+        <h5>🤖 Not a Robot</h5>
+        <p>Solve the fun robot challenge and prove you're human.</p>
+        <a href="https://neal.fun/not-a-robot/" target="_blank" class="text-info track-play" data-id="notarobot">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun stimulation-clicker -->
+      <div class="card p-3 mb-3">
+        <h5>🖱️ Stimulation Clicker</h5>
+        <p>Click your way through simple upgrades and rewards.</p>
+        <a href="https://neal.fun/stimulation-clicker/" target="_blank" class="text-info track-play" data-id="stimulationclicker">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun infinite-craft -->
+      <div class="card p-3 mb-3">
+        <h5>⛏️ Infinite Craft</h5>
+        <p>Collect resources and expand infinitely in this crafting game.</p>
+        <a href="https://neal.fun/infinite-craft/" target="_blank" class="text-info track-play" data-id="infinitecraft">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun perfect-circle -->
+      <div class="card p-3 mb-3">
+        <h5>⭕ Perfect Circle</h5>
+        <p>Try to draw the perfect circle by hand in this challenge.</p>
+        <a href="https://neal.fun/perfect-circle/" target="_blank" class="text-info track-play" data-id="perfectcircle">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+
+      <!-- Neal.fun absurd-trolley-problems -->
+      <div class="card p-3 mb-3">
+        <h5>🚋 Absurd Trolley Problems</h5>
+        <p>Choose your own trolley dilemma in a funny ethics simulator.</p>
+        <a href="https://neal.fun/absurd-trolley-problems/" target="_blank" class="text-info track-play" data-id="absurdtrolleyproblems">Play Now</a>
+        <p class="time-label">Time on site: <span class="site-timer">00:00:00</span></p>
+      </div>
+    </div>
+
+    <!-- RIGHT: POPULAR / NEW / UPDATED (ROTATING) -->
+    <div class="col-md-4 mb-4">
+      <h2 class="text-center mb-4">🔥 Trending</h2>
+
+      <div class="d-flex justify-content-between gap-2 mb-3">
+        <button id="popularBtn" type="button" class="btn btn-outline-warning flex-fill active-btn">Popular</button>
+        <button id="newBtn" type="button" class="btn btn-outline-success flex-fill">New</button>
+        <button id="updatedBtn" type="button" class="btn btn-outline-info flex-fill">Updated</button>
+      </div>
+
+      <div id="trendingContainer"></div>
+
+    </div>
   </div>
-
-  <!-- Statle -->
-  <div class="card p-3 mb-3">
-    <h5>📊 Statle</h5>
-    <p>Daily stats-based guessing challenge game</p>
-    <a href="https://statle.fun/" target="_blank" class="text-info">Play Now</a>
-  </div>
-
-  <!-- Genshindle -->
-  <div class="card p-3 mb-3">
-    <h5>⚡ Genshindle</h5>
-    <p>Guess Genshin Impact characters in quiz form</p>
-    <a href="https://genshindle.com/" target="_blank" class="text-info">Play Now</a>
-  </div>
-
-  <!-- Original placeholders kept -->
-  <div class="card p-3 mb-3">
-    <h5>A - Astro Runner 🚀</h5>
-    <p>Placeholder description</p>
-  </div>
-
-  <div class="card p-3 mb-3">
-    <h5>B - Bubble Quest 🫧</h5>
-    <p>Placeholder description</p>
-  </div>
-
-  <div class="card p-3 mb-3">
-    <h5>C - Cyber Clash ⚔️</h5>
-    <p>Placeholder description</p>
-  </div>
-
 </div>
+
+<script>
+const trendingGames = [
+  {
+    id: "worldguessr",
+    badge: "⭐ Popular",
+    badgeClass: "bg-warning text-dark",
+    title: "🌍 WorldGuessr",
+    desc: "Guess real-world locations using visual clues",
+    link: "https://www.worldguessr.com/"
+  },
+  {
+    id: "statle",
+    badge: "🆕 New",
+    badgeClass: "bg-success",
+    title: "📊 Statle",
+    desc: "Daily stats-based guessing challenge game",
+    link: "https://statle.fun/"
+  },
+  {
+    id: "genshindle",
+    badge: "⬆️ Updated",
+    badgeClass: "bg-info text-dark",
+    title: "⚡ Genshindle",
+    desc: "Guess Genshin Impact characters in quiz form",
+    link: "https://genshindle.com/"
+  },
+  {
+    id: "astrorunner",
+    badge: "⭐ Popular",
+    badgeClass: "bg-warning text-dark",
+    title: "🚀 Astro Runner",
+    desc: "Navigate through space obstacles",
+    link: "#"
+  },
+  {
+    id: "bubblequest",
+    badge: "🆕 New",
+    badgeClass: "bg-success",
+    title: "🫧 Bubble Quest",
+    desc: "Pop bubbles and collect power-ups",
+    link: "#"
+  },
+  {
+    id: "cyberclash",
+    badge: "⬆️ Updated",
+    badgeClass: "bg-info text-dark",
+    title: "⚔️ Cyber Clash",
+    desc: "Intense action-packed battles",
+    link: "#"
+  },
+  {
+    id: "miniracer",
+    badge: "⭐ Popular",
+    badgeClass: "bg-warning text-dark",
+    title: "🎯 Mini Racer",
+    desc: "Fast-paced racing challenges",
+    link: "#"
+  },
+  {
+    id: "weirdmaze",
+    badge: "🆕 New",
+    badgeClass: "bg-success",
+    title: "🌀 Weird Maze",
+    desc: "Navigate through impossible mazes",
+    link: "#"
+  },
+  {
+    id: "arcadeblaster",
+    badge: "⬆️ Updated",
+    badgeClass: "bg-info text-dark",
+    title: "🎮 Arcade Blaster",
+    desc: "Classic shooting game reimagined",
+    link: "#"
+  }
+];
+
+const STORAGE_KEY = 'gameLibraryPopular';
+const TIME_KEY = 'gameTimeTotals';
+const VISIT_KEY = 'currentGameVisit';
+const MAX_POPULAR = 5;
+
+function getPlayedGames() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  } catch (err) {
+    return [];
+  }
+}
+
+function savePlayedGame(gameId) {
+  const played = getPlayedGames().filter(id => id !== gameId);
+  played.push(gameId);
+  while (played.length > MAX_POPULAR) {
+    played.shift();
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(played));
+}
+
+function getGameTimeTotals() {
+  try {
+    return JSON.parse(localStorage.getItem(TIME_KEY) || '{}');
+  } catch (err) {
+    return {};
+  }
+}
+
+function saveGameTimeTotals(totals) {
+  localStorage.setItem(TIME_KEY, JSON.stringify(totals));
+}
+
+function addGameTime(gameId, seconds) {
+  const totals = getGameTimeTotals();
+  totals[gameId] = (totals[gameId] || 0) + seconds;
+  saveGameTimeTotals(totals);
+}
+
+function buildTrendingGroups() {
+  const played = getPlayedGames();
+  const groups = {
+    popular: [],
+    new: [],
+    updated: []
+  };
+
+  const popularIds = new Set(played);
+
+  trendingGames.forEach(game => {
+    const id = game.id;
+    if (popularIds.has(id)) {
+      groups.popular.push({ ...game, badge: '⭐ Popular', badgeClass: 'bg-warning text-dark' });
+      return;
+    }
+    if (game.badge.includes('Popular')) {
+      groups.popular.push(game);
+      return;
+    }
+    if (game.badge.includes('New')) {
+      groups.new.push(game);
+      return;
+    }
+    if (game.badge.includes('Updated')) {
+      groups.updated.push(game);
+      return;
+    }
+  });
+
+  if (groups.popular.length > MAX_POPULAR) {
+    groups.popular = groups.popular.slice(-MAX_POPULAR);
+  }
+
+  return groups;
+}
+
+let activeCategory = 'popular';
+let currentGameId = sessionStorage.getItem(VISIT_KEY) || null;
+let visitStart = null;
+
+function formatSeconds(seconds) {
+  const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+  const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+  const secs = String(seconds % 60).padStart(2, '0');
+  return `${hrs}:${mins}:${secs}`;
+}
+
+function updateGameTimers() {
+  const totals = getGameTimeTotals();
+  document.querySelectorAll('.card').forEach(card => {
+    const timer = card.querySelector('.site-timer');
+    const link = card.querySelector('.track-play');
+    if (!timer || !link) return;
+    const gameId = link.dataset.id;
+    const seconds = totals[gameId] || 0;
+    timer.textContent = formatSeconds(seconds);
+  });
+}
+
+function startVisit(gameId) {
+  currentGameId = gameId;
+  visitStart = Date.now();
+  sessionStorage.setItem(VISIT_KEY, gameId);
+  sessionStorage.setItem('visitStartTime', visitStart.toString());
+}
+
+function endVisit() {
+  if (!currentGameId || !visitStart) return;
+  const seconds = Math.floor((Date.now() - visitStart) / 1000);
+  if (seconds > 0) {
+    addGameTime(currentGameId, seconds);
+  }
+  currentGameId = null;
+  visitStart = null;
+  sessionStorage.removeItem(VISIT_KEY);
+  sessionStorage.removeItem('visitStartTime');
+  updateGameTimers();
+}
+
+function restoreVisit() {
+  const storedGameId = sessionStorage.getItem(VISIT_KEY);
+  const storedStart = Number(sessionStorage.getItem('visitStartTime') || 0);
+  if (storedGameId && storedStart) {
+    currentGameId = storedGameId;
+    visitStart = storedStart;
+  }
+}
+
+function renderTrendingGames(category) {
+  const groups = buildTrendingGroups();
+  const games = groups[category];
+  if (!games.length) {
+    document.getElementById('trendingContainer').innerHTML = '<div class="card p-3 mb-3"><p class="mb-0">No games available in this category.</p></div>';
+    return;
+  }
+
+  const cards = games.map(game => `
+    <div class="card p-3 mb-3 fade-in">
+      <span class="badge ${game.badgeClass} mb-2">${game.badge}</span>
+      <h5>${game.title}</h5>
+      <p>${game.desc}</p>
+      <a href="${game.link}" target="_blank" class="text-info track-play" data-id="${game.id}">Play Now</a>
+    </div>
+  `).join('');
+
+  document.getElementById('trendingContainer').innerHTML = cards;
+}
+
+function setActiveCategory(category) {
+  activeCategory = category;
+  document.getElementById('popularBtn').classList.toggle('active-btn', category === 'popular');
+  document.getElementById('newBtn').classList.toggle('active-btn', category === 'new');
+  document.getElementById('updatedBtn').classList.toggle('active-btn', category === 'updated');
+  renderTrendingGames(category);
+}
+
+function rotateCategory() {
+  const order = ['popular', 'new', 'updated'];
+  const nextIndex = (order.indexOf(activeCategory) + 1) % order.length;
+  setActiveCategory(order[nextIndex]);
+}
+
+restoreVisit();
+
+// Button handlers
+document.getElementById('popularBtn').addEventListener('click', () => {
+  setActiveCategory('popular');
+});
+
+document.getElementById('newBtn').addEventListener('click', () => {
+  setActiveCategory('new');
+});
+
+document.getElementById('updatedBtn').addEventListener('click', () => {
+  setActiveCategory('updated');
+});
+
+document.addEventListener('click', event => {
+  const target = event.target;
+  if (target.matches('.track-play')) {
+    const gameId = target.dataset.id;
+    if (gameId) {
+      savePlayedGame(gameId);
+      startVisit(gameId);
+      setTimeout(() => setActiveCategory('popular'), 100);
+    }
+  }
+});
+
+// when the user returns to this tab, stop counting away-time as game time
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    endVisit();
+  }
+});
+
+document.addEventListener('pagehide', () => {
+  endVisit();
+});
+
+// Initial render
+setActiveCategory(activeCategory);
+updateGameTimers();
+
+// Rotate every 6 seconds between categories
+setInterval(rotateCategory, 6000);
+</script>
+
+<style>
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.active-btn {
+  color: black !important;
+  box-shadow: 0 0 20px rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+}
+</style>
 
 </body>
 </html>
