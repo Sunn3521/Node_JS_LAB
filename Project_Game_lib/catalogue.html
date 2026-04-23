@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Catalogue</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(10,10,30,0.85), rgba(10,10,30,0.95)),
+    url('https://images.unsplash.com/photo-1542751371-adc38448a05e');
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #020617;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+.navbar a {
+  color: cyan !important;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-shadow: 0 0 10px cyan;
+}
+
+/* TITLE */
+h1 {
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* CARDS */
+.card {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 12px;
+  transition: 0.3s;
+  color: white;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px cyan;
+}
+
+.container {
+  padding-bottom: 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<nav class="navbar">
+  <div class="container">
+
+    <a href="home.html" class="navbar-brand">
+      ⬅ Back to Home
+    </a>
+
+    <a href="login.html" class="navbar-brand">
+      Login
+    </a>
+
+  </div>
+</nav>
+
+<!-- TITLE -->
+<div class="text-center mt-4">
+  <h1>📚 Game Catalogue</h1>
+</div>
+
+<!-- GAMES LIST -->
+<div class="container mt-4">
+
+  <!-- WorldGuessr -->
+  <div class="card p-3 mb-3">
+    <h5>🌍 WorldGuessr</h5>
+    <p>Guess real-world locations using visual clues</p>
+    <a href="https://www.worldguessr.com/" target="_blank" class="text-info">Play Now</a>
+  </div>
+
+  <!-- Statle -->
+  <div class="card p-3 mb-3">
+    <h5>📊 Statle</h5>
+    <p>Daily stats-based guessing challenge game</p>
+    <a href="https://statle.fun/" target="_blank" class="text-info">Play Now</a>
+  </div>
+
+  <!-- Genshindle -->
+  <div class="card p-3 mb-3">
+    <h5>⚡ Genshindle</h5>
+    <p>Guess Genshin Impact characters in quiz form</p>
+    <a href="https://genshindle.com/" target="_blank" class="text-info">Play Now</a>
+  </div>
+
+  <!-- Original placeholders kept -->
+  <div class="card p-3 mb-3">
+    <h5>A - Astro Runner 🚀</h5>
+    <p>Placeholder description</p>
+  </div>
+
+  <div class="card p-3 mb-3">
+    <h5>B - Bubble Quest 🫧</h5>
+    <p>Placeholder description</p>
+  </div>
+
+  <div class="card p-3 mb-3">
+    <h5>C - Cyber Clash ⚔️</h5>
+    <p>Placeholder description</p>
+  </div>
+
+</div>
+
+</body>
+</html>

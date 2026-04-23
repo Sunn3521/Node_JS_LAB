@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+
+  background: 
+    linear-gradient(rgba(10,10,30,0.8), rgba(10,10,30,0.95)),
+    url('https://images.unsplash.com/photo-1542751371-adc38448a05e');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+/* glow effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.1), transparent 70%);
+}
+
+/* main box */
+.wrapper {
+  width: 340px;
+  padding: 35px;
+  border-radius: 14px;
+
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0,255,255,0.25);
+  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+
+  text-align: center;
+}
+
+/* logo */
+.img-area img {
+  width: 130px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px cyan);
+}
+
+/* title */
+h2 {
+  color: cyan;
+  margin-bottom: 20px;
+}
+
+/* inputs */
+.input-box {
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+
+  border: 1px solid rgba(0,255,255,0.3);
+  background: #020617;
+  color: white;
+}
+
+.input-box input:focus {
+  outline: none;
+  box-shadow: 0 0 10px cyan;
+}
+
+/* button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, cyan, blue);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 15px cyan;
+  transform: scale(1.05);
+}
+
+/* footer */
+.footer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.footer a {
+  color: cyan;
+  text-decoration: none;
+}
